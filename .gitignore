@@ -1,0 +1,9 @@
+.DS_Store
+*.zip
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Virtual env metadata
+.venv
+
+.vscode
