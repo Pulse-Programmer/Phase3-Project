@@ -33,7 +33,7 @@ class Inventory:
 
     @quantity.setter
     def quantity(self, quantity):
-        if isinstance(quantity, int) and len(quantity):
+        if isinstance(quantity, int):
             self._quantity = quantity
         else:
             raise ValueError("Quantity must be a non-empty integer")

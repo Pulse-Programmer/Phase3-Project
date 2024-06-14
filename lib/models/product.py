@@ -49,7 +49,7 @@ class Product:
     
     @price.setter
     def price(self, price):
-        if isinstance(price, float) and len(price):
+        if isinstance(price, float):
             self._price = price
         else:
             raise ValueError("Price must be a non-empty float")

@@ -47,7 +47,7 @@ class OrderDetails:
 
     @quantity.setter
     def quantity(self, quantity):
-        if isinstance(quantity, int) and len(quantity):
+        if isinstance(quantity, int):
             self._quantity = quantity
         else:
             raise ValueError("Quantity must be a non-empty integer")
@@ -58,7 +58,7 @@ class OrderDetails:
 
     @price.setter
     def price(self, price):
-        if isinstance(price, float) and len(price):
+        if isinstance(price, float):
             self._price = price
         else:
             raise ValueError("Price must be a non-empty float")

@@ -43,10 +43,10 @@ class Customer:
     @phone.setter
     def phone(self, phone):
         phone = int(phone)
-        if isinstance(phone, int) and len(phone)==10:
+        if isinstance(phone, int):
             self._phone = phone  
         else:
-            raise ValueError("Phone number must be a 10-digit integer")
+            raise ValueError("Phone number must be integer")
         
     @property
     def address(self):

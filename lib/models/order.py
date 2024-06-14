@@ -24,7 +24,7 @@ class Order:
 
     @customer_id.setter
     def customer_id(self, customer_id):
-        if isinstance(customer_id, int) and Customer.find_by_id(customer_id):
+        if isinstance(customer_id, int) and Customer.get_by_id(customer_id):
             self._customer_id = customer_id
         else:
             raise ValueError("Customer ID must reference an existing customer in the database")
@@ -46,10 +46,10 @@ class Order:
 
     @total_amount.setter
     def total_amount(self, total_amount):
-        if isinstance(total_amount, float) and len(total_amount):
+        if isinstance(total_amount, float):
             self._total_amount = total_amount
         else:
-            raise ValueError("Total amount must be a non-empty float")
+            raise ValueError("Total amount must be a float")
 
     @classmethod
     def create_table(cls):

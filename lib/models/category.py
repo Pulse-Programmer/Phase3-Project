@@ -119,6 +119,9 @@ class Category:
     
     def products(self):
         """ return all Product instances belonging to this Category """
+        from models.product import Product
+        
+        return [product for product in Product.all.values() if product.category_id == self.id]
         
         
 
