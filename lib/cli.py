@@ -18,6 +18,7 @@ from helpers import (
     create_order,
     list_order_details,
     find_order_details_by_id,
+    create_order_details,
     list_inventories,
     find_inventory_by_id,
     list_customers
@@ -70,8 +71,12 @@ def main():
             list_inventories()
         elif option == 20:
             find_inventory_by_id()
+        elif option == 21:
+            list_customers()
+        elif option == 22:
+            create_order_details()
         else:
-             print("Invalid choice")
+            print("    Invalid choice")
 
 
 def menu():
@@ -96,6 +101,8 @@ def menu():
     print("18. Find order details by ID")
     print("19. List inventories")
     print("20. Find inventory by ID")
+    print("21. List customers")
+    print("22. Create order details")
     
     
 if __name__ == "__main__":
