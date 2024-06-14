@@ -181,8 +181,18 @@ def find_order_details_by_id():
     print(orderdetails) if orderdetails else print(
         "No order details found with that ID"
     )
-    
-    
+
+
+def create_order_details():
+    order_id = int(input("Enter order ID:> "))
+    product_id = int(input("Enter product ID:> "))
+    quantity = int(input("Enter quantity:> "))
+    price = float(input("Enter price:> "))
+    try:
+        orderdetails = OrderDetails.create(order_id, product_id, quantity, price)
+        print(f'    Success: {orderdetails}')
+    except Exception as exc:
+        print('Error saving order details:', exc)       
     
 #inventory methods
 def list_inventories():
@@ -203,9 +213,27 @@ def list_customers():
     customers = Customer.get_all()
     for customer in customers:
         print(f"    {customer.id}: {customer.name}")
+        
+def create_customer():
+    name = input("Enter customer name:> ")
+    email = input("Enter customer email:> ")
+    phone = input("Enter customer phone:> ")
+    address = input("Enter customer address:> ")
+    try:
+        customer = Customer.create(name, email, phone, address)
+        print(f'    Success: {customer}')
+    except Exception as e:
+        print('Error saving customer:', e)
 
 
-
+def delete_customer():
+    id_ = int(input("Enter customer ID:> "))
+    customer = Customer.find_by_id(id_)
+    if customer:
+        customer.delete()
+        print(f"    Success: {customer}")
+    else:
+        print("No customer found with that ID")
 
 
 
