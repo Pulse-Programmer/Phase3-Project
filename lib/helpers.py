@@ -115,17 +115,18 @@ def update_product():
     id_ = int(input("Enter product ID:> "))
     product = Product.find_by_id(id_)
     if product:
-        name = input("Enter new product name:> ")
-        product.name = name
-        description = input("Enter new product description:> ")
-        product.description = description
-        price = float(input("Enter new product price:> "))
-        product.price = price
-        category_id = int(input("Enter new product category ID:> "))
-        product.category_id = category_id
-        supplier_id = int(input("Enter new product supplier ID:> "))
-        product.supplier_id = supplier_id
         try:
+            name = input("Enter new product name:> ")
+            product.name = name
+            description = input("Enter new product description:> ")
+            product.description = description
+            price = float(input("Enter new product price:> "))
+            product.price = price
+            category_id = int(input("Enter new product category ID:> "))
+            product.category_id = category_id
+            supplier_id = int(input("Enter new product supplier ID:> "))
+            product.supplier_id = supplier_id
+        
             product.update()
             print(f"    Success: {product}")
         except Exception as exc:
@@ -151,8 +152,8 @@ def list_orders():
         print(f"    {order.id}: {order.customer_id}")
         
 def find_order_by_id():
-    id = int(input("Enter order ID:> "))
-    order = Order.find_by_id(id)
+    id_ = int(input("Enter order ID:> "))
+    order = Order.find_by_id(id_)
     print(order) if order else print(
         "No order found with that ID"
     )
@@ -176,8 +177,8 @@ def list_order_details():
         print(f"    {orderdetail.id}: {orderdetail.order_id}")
         
 def find_order_details_by_id():
-    id = int(input("Enter order details ID:> "))
-    orderdetails = OrderDetails.find_by_id(id)
+    id_ = int(input("Enter order details ID:> "))
+    orderdetails = OrderDetails.find_by_id(id_)
     print(orderdetails) if orderdetails else print(
         "No order details found with that ID"
     )
@@ -202,8 +203,8 @@ def list_inventories():
 
 
 def find_inventory_by_id():
-    id = int(input("Enter inventory ID:> "))
-    inventory = Inventory.find_by_id(id)
+    id_ = int(input("Enter inventory ID:> "))
+    inventory = Inventory.find_by_id(id_)
     print(inventory) if inventory else print(
         "No inventory found with that ID"
     )
@@ -224,14 +225,42 @@ def create_customer():
         print(f'    Success: {customer}')
     except Exception as e:
         print('Error saving customer:', e)
+        
+def find_customer_by_id():
+    id_ = int(input("Enter customer ID:> "))
+    customer = Customer.get_by_id(id_)
+    print(customer) if customer else print(
+        "No customer found with that ID"
+    )
+
+def update_customer():
+    id_ = int(input("Enter customer ID:> "))
+    
+    if customer:= Customer.get_by_id(id_):
+        try:
+            name = input("Enter new customer name:> ")
+            customer.name = name
+            email = input("Enter new customer email:> ")
+            customer.email = email
+            phone = input("Enter new customer phone:> ")
+            customer.phone = phone
+            address = input("Enter new customer address:> ")
+            customer.address = address
+       
+            customer.update()
+            print(f"    Success: {customer}")
+        except Exception as exc:
+            print("Error updating customer: ", exc)
+    else:
+        print("No customer found with that ID")
 
 
 def delete_customer():
     id_ = int(input("Enter customer ID:> "))
-    customer = Customer.find_by_id(id_)
+    customer = Customer.get_by_id(id_)
     if customer:
         customer.delete()
-        print(f"    Success: {customer}")
+        print(f"    Deleted: {customer}")
     else:
         print("No customer found with that ID")
 
