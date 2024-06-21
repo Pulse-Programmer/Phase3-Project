@@ -47,30 +47,30 @@ The CLI application project utilizes the following helper methods:
    -delete_product: Deletes a product.
 
 4. Order:
-   list_orders: Lists all orders.
-   find_order_by_id: Finds an order by ID.
-   create_order: Creates a new order.
-   update_order: Updates an existing order.
-   delete_order: Deletes an order.
+   -list_orders: Lists all orders.
+   -find_order_by_id: Finds an order by ID.
+   -create_order: Creates a new order.
+   -update_order: Updates an existing order.
+   -delete_order: Deletes an order.
 
 5. Order Details:
-   list_order_details: Lists all order details.
-   find_order_details_by_id: Finds order details by ID.
-   create_order_details: Creates new order details.
-   update_order_details: Updates existing order details.
-   delete_order_details: Deletes order details.
+   -list_order_details: Lists all order details.
+   -find_order_details_by_id: Finds order details by ID.
+   -create_order_details: Creates new order details.
+   -update_order_details: Updates existing order details.
+   -delete_order_details: Deletes order details.
 
 6. Inventory:
-   list_inventory: Lists all inventory items.
-   find_inventory_by_id: Finds inventory by ID.
-   update_inventory: Updates the quantity of an inventory item.
+   -list_inventory: Lists all inventory items.
+   -find_inventory_by_id: Finds inventory by ID.
+   -update_inventory: Updates the quantity of an inventory item.
 
 7. Customer:
-   list_customers: Lists all customers.
-   find_customer_by_id: Finds a customer by ID.
-   create_customer: Creates a new customer.
-   update_customer: Updates an existing customer.
-   delete_customer: Deletes a customer.
+   -list_customers: Lists all customers.
+   -find_customer_by_id: Finds a customer by ID.
+   -create_customer: Creates a new customer.
+   -update_customer: Updates an existing customer.
+   -delete_customer: Deletes a customer.
 
 ### Models
 
