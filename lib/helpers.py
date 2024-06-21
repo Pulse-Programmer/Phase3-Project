@@ -14,6 +14,15 @@ def exit_program():
 
 
 #category methods
+def create_category():
+    name = input("Enter category name:> ")
+    try:
+        category = Category.create(name)
+        print(f'    Success: {category}')
+    except Exception as e:
+        print('Error saving category:', e)
+        
+            
 def list_categories():
     categories = Category.get_all()
     for category in categories:

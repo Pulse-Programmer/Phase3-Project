@@ -1,5 +1,6 @@
 from helpers import (
     exit_program,
+    create_category,
     list_categories,
     find_category_by_name,
     delete_category,
@@ -91,7 +92,8 @@ def main():
             delete_customer()
         elif option == 27:
             delete_category()
-            
+        elif option == 28:
+            create_category()            
         else:
             print("    Invalid choice")
 
@@ -125,6 +127,7 @@ def menu():
     print("25. Update customer")
     print("26. Delete customer")
     print("27. Delete category")
+    print("28. Create_category")
     print("0. Exit")
     
     
