@@ -21,7 +21,20 @@ def create_category():
         print(f'    Success: {category}')
     except Exception as e:
         print('Error saving category:', e)
-        
+
+def update_category():
+    id_ = int(input("Enter category ID:> "))
+    
+    if category:= Category.get_by_id(id_):
+        try:
+            name = input("Enter new category name:> ")
+            category.name = name
+            category.update()
+            print(f"    Success: {category}")
+        except Exception as exc:
+            print("Error updating category: ", exc)
+    else:
+        print("No category found with that ID")        
             
 def list_categories():
     categories = Category.get_all()
@@ -280,6 +293,7 @@ def delete_customer():
         print(f"    Deleted: {customer}")
     else:
         print("No customer found with that ID")
+
 
 
 
