@@ -15,8 +15,8 @@ class OrderDetails:
         
     def __repr__(self) -> str:
         return (f"<OrderDetails {self.id}: {self.quantity}, {self.price}, " + 
-                f"Order ID: {self.order_id}" + 
-                f"Product ID: {self.product_id}>")
+                f"Order ID: {self.order_id}" +  
+                f" Product ID: {self.product_id}>")
     
 
     @property

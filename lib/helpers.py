@@ -174,7 +174,7 @@ def create_order():
 def list_order_details():
     orderdetails = OrderDetails.get_all()
     for orderdetail in orderdetails:
-        print(f"    {orderdetail.id}: {orderdetail.order_id}")
+        print(f"    {orderdetail.id}: {orderdetail}")
         
 def find_order_details_by_id():
     id_ = int(input("Enter order details ID:> "))

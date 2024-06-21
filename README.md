@@ -25,26 +25,26 @@ The application will provide a menu with various options to perform different ta
 The CLI application project utilizes the following helper methods:
 
 1. Category:
-   list_categories: Lists all categories.
-   find_category_by_name: Finds a category by name.
-   create_category: Creates a new category.
-   update_category: Updates an existing category.
-   delete_category: Deletes a category.
+   -list_categories: Lists all categories.
+   -find_category_by_name: Finds a category by name.
+   -create_category: Creates a new category.
+   -update_category: Updates an existing category.
+   -delete_category: Deletes a category.
 
 2. Supplier:
-   list_suppliers: Lists all suppliers.
-   find_supplier_by_name: Finds a supplier by name.
-   create_supplier: Creates a new supplier.
-   update_supplier: Updates an existing supplier.
-   delete_supplier: Deletes a supplier.
+   -list_suppliers: Lists all suppliers.
+   -find_supplier_by_name: Finds a supplier by name.
+   -create_supplier: Creates a new supplier.
+   -update_supplier: Updates an existing supplier.
+   -delete_supplier: Deletes a supplier.
 
 3. Product:
-   list_products: Lists all products.
-   find_product_by_name: Finds a product by name.
-   find_product_by_id: Finds a product by ID.
-   create_product: Creates a new product.
-   update_product: Updates an existing product.
-   delete_product: Deletes a product.
+   -list_products: Lists all products.
+   -find_product_by_name: Finds a product by name.
+   -find_product_by_id: Finds a product by ID.
+   -create_product: Creates a new product.
+   -update_product: Updates an existing product.
+   -delete_product: Deletes a product.
 
 4. Order:
    list_orders: Lists all orders.
