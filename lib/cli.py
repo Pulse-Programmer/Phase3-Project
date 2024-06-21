@@ -25,7 +25,9 @@ from helpers import (
     find_order_details_by_id,
     create_order_details,
     list_inventories,
+    create_inventory,
     find_inventory_by_id,
+    update_inventory,
     list_customers,
     create_customer,
     find_customer_by_id,
@@ -102,7 +104,11 @@ def main():
         elif option == 30:
             update_order()
         elif option == 31:
-            delete_order()            
+            delete_order()
+        elif option == 32:
+            create_inventory()
+        elif option == 33:
+            update_inventory()                    
         else:
             print("    Invalid choice")
 
@@ -140,6 +146,8 @@ def menu():
     print("29. Update category")
     print("30. Update order")
     print("31. Delete order")
+    print("32. Create inventory")
+    print("33. Update inventory")
     print("0. Exit")
     
     

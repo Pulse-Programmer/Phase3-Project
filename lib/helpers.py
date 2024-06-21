@@ -255,6 +255,15 @@ def list_inventories():
     for inv in inventory:
         print(f"    {inv}")
 
+def create_inventory():
+    product_id = int(input("Enter product ID:> "))
+    quantity = int(input("Enter quantity:> "))
+    try:
+        inventory = Inventory.create(product_id, quantity)
+        print(f'    Success: {inventory}')
+    except Exception as e:
+        print('Error saving inventory:', e)
+
 
 def find_inventory_by_id():
     id_ = int(input("Enter inventory ID:> "))
@@ -262,6 +271,24 @@ def find_inventory_by_id():
     print(inventory) if inventory else print(
         "No inventory found with that ID"
     )
+    
+def update_inventory():
+    id_ = int(input("Enter inventory ID:> "))
+    inventory = Inventory.find_by_id(id_)
+    if inventory:
+        try:
+            product_id = int(input("Enter new product ID:> "))
+            inventory.product_id = product_id
+            quantity = int(input("Enter new quantity:> "))
+            inventory.quantity = quantity
+            inventory.update()
+            print(f"    Success: {inventory}")
+        except Exception as exc:
+            print("Error updating inventory: ", exc)
+    else:
+        print("No inventory found with that ID")
+        
+        
 
 #customer methods      
 def list_customers():
@@ -317,7 +344,6 @@ def delete_customer():
         print(f"    Deleted: {customer}")
     else:
         print("No customer found with that ID")
-
 
 
 
