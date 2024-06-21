@@ -2,6 +2,7 @@ from helpers import (
     exit_program,
     list_categories,
     find_category_by_name,
+    delete_category,
     list_suppliers,
     find_supplier_by_name,
     create_supplier,
@@ -88,6 +89,8 @@ def main():
             update_customer()
         elif option == 26:
             delete_customer()
+        elif option == 27:
+            delete_category()
             
         else:
             print("    Invalid choice")
@@ -121,6 +124,7 @@ def menu():
     print("24. Find customer by ID")
     print("25. Update customer")
     print("26. Delete customer")
+    print("27. Delete category")
     print("0. Exit")
     
     

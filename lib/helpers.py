@@ -26,6 +26,14 @@ def find_category_by_name():
         "No category found with that name"
     )
 
+def delete_category():
+    id_ = int(input("Enter category ID:> "))
+    category = Category.find_by_id(id_)
+    if category:
+        category.delete()
+        print(f"    Deleted: {category}")
+    else:
+        print("No category found with that ID")
 
 #supplier methods      
 def list_suppliers():
@@ -139,7 +147,7 @@ def delete_product():
     product = Product.find_by_id(id_)
     if product:
         product.delete()
-        print(f"    Success: {product}")
+        print(f"    Deleted: {product}")
     else:
         print("No product found with that ID")
 
