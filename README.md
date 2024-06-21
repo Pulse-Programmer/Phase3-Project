@@ -87,4 +87,4 @@ The CLI application project utilizes the following models:
 Each model represents a table in the database and provides methods to interact with the data.
 
 License
-This project is licensed under the MIT License. See the LICENSE file for more information.
+This project is licensed under the MIT License.
