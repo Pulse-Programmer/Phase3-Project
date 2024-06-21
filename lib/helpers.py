@@ -198,6 +198,30 @@ def create_order():
         print(f'    Success: {order}')
     except Exception as e:
         print('Error saving order:', e)
+        
+def update_order():
+    id_ = int(input("Enter order ID:> "))
+    order = Order.find_by_id(id_)
+    if order:
+        try:
+            customer_id = int(input("Enter new customer ID:> "))
+            order.customer_id = customer_id
+            order.update()
+            print(f"    Success: {order}")
+        except Exception as exc:
+            print("Error updating order: ", exc)
+    else:
+        print("No order found with that ID")
+        
+
+def delete_order():
+    id_ = int(input("Enter order ID:> "))
+    order = Order.find_by_id(id_)
+    if order:
+        order.delete()
+        print(f"    Deleted: {order}")
+    else:
+        print("No order found with that ID")
  
         
 #orderdetails methods
